@@ -14,8 +14,16 @@ Ex. Link Fun lololol :D
   <li class="Hello-World">more cyan</li>
 </ul>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus consectetur, labore. Dicta ea madisorderedime, fugit tenetur libero ut officia vero quidem, nobis aliquid minus voluptatem edisorderedercitationem reiciendis sint praesentium accusantium.</p>
+<div class = "square"></div>
 <script type="text/javascript">
-	var disordered = document.getElementById("disordered")
+	var disordered = document.getElementById("disordered");
+	var square = document.getElementsByClassName("square")[0];
+	var squareLocation = 0;
+	square.style.width = "10px"
+	square.style.height = "10px"
+	square.style.backgroundColor = "maroon"
+	square.style.position = "relative"
+	console.log(square)
 	disordered.addEventListener("mouseover", function(){	
 
 		if (disordered.style.backgroundColor === "tomato") {
@@ -37,6 +45,11 @@ Ex. Link Fun lololol :D
 		}
 		if (event.key === "h"){
 			document.body.style.backgroundColor="plum"
+		}
+		console.log(event.key)
+		if (event.key === "ArrowDown"){
+			squareLocation+= 2;
+			square.style.top = squareLocation + "px"
 		}
 	})
 </script>

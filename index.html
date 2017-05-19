@@ -23,9 +23,7 @@ Ex. Link Fun lololol :D
 	square.style.height = "10px"
 	square.style.backgroundColor = "maroon"
 	square.style.position = "relative"
-	console.log(square)
 	disordered.addEventListener("mouseover", function(){	
-
 		if (disordered.style.backgroundColor === "tomato") {
 			disordered.style.backgroundColor="cyan"
 			return;
@@ -36,9 +34,6 @@ Ex. Link Fun lololol :D
 		}
 		disordered.style.backgroundColor="tomato"
 	})	
-
-
-
 	document.body.addEventListener("keydown", function(event){
 		if (event.key === "g"){
 			document.body.style.backgroundColor="navy"
@@ -46,10 +41,14 @@ Ex. Link Fun lololol :D
 		if (event.key === "h"){
 			document.body.style.backgroundColor="plum"
 		}
-		console.log(event.key)
 		if (event.key === "ArrowDown"){
-			squareLocation+= 2;
+			squareLocation+= 4;
 			square.style.top = squareLocation + "px"
 		}
+		if (event.key === "ArrowUp"){
+			squareLocation+= -4;
+			square.style.top = squareLocation + "px"
+		}
+
 	})
 </script>

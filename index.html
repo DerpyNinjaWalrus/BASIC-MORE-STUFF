@@ -19,9 +19,10 @@ Ex. Link Fun lololol :D
 	var disordered = document.getElementById("disordered");
 	var square = document.getElementsByClassName("square")[0];
 	var squareLocation = 0;
+	var squareHorizontal = 0;
 	square.style.width = "10px"
 	square.style.height = "10px"
-	square.style.backgroundColor = "maroon"
+	square.style.backgroundColor = "navy"
 	square.style.position = "relative"
 	disordered.addEventListener("mouseover", function(){	
 		if (disordered.style.backgroundColor === "tomato") {
@@ -41,14 +42,26 @@ Ex. Link Fun lololol :D
 		if (event.key === "h"){
 			document.body.style.backgroundColor="plum"
 		}
-		if (event.key === "ArrowDown"){
-			squareLocation+= 4;
-			square.style.top = squareLocation + "px"
+		setSquareLocation();
+		renderSquareLocation();
+		function setSquareLocation (){
+			
+			if (event.key === "ArrowDown"){
+				squareLocation+= 4;
+			}
+			if (event.key === "ArrowUp"){
+				squareLocation-= 4;
+			}
+			if  (event.key === "ArrowRight"){
+				squareHorizontal += 4;
+			}
+			if  (event.key === "ArrowLeft"){
+				squareHorizontal -= 4;			
+			}		
 		}
-		if (event.key === "ArrowUp"){
-			squareLocation+= -4;
-			square.style.top = squareLocation + "px"
+		function renderSquareLocation (){
+			square.style.left = squareHorizontal + "px"
+			square.style.top = squareLocation + "px"	
 		}
-
 	})
 </script>
